@@ -1,0 +1,52 @@
+# Maven build artifacts
+/target/
+.mvn/
+
+# Logs
+*.log
+logs/
+*.out
+
+# IDE-specific files
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# OS-specific files
+.DS_Store
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+*~
+
+# Environment or local dev config
+.env
+.env.local
+application-local.yml
+application-dev.yml
+application-secrets.yml
+
+# Build tools
+/build/
+/bin/
+
+# Test Reports
+/test-output/
+coverage/
+jacoco.exec
+
+# Docker / K8s
+*.pid
+*.tar
+*.gz
+*.bak
+*.backup
+*.orig
+
+# Custom ignore
+*.keystore
+*.db

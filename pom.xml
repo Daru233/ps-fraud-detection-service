@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<properties>
+		<java.version>17</java.version>
+		<jib.version>3.4.5</jib.version>
+		<lombok.version>1.18.36</lombok.version>
+		<spring-cloud-gcp-dependencies>3.7.7</spring-cloud-gcp-dependencies>
+	</properties>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.4.4</version>
+		<relativePath/>
+	</parent>
+
+	<groupId>com.ps</groupId>
+	<artifactId>fraud-detection-service</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>fraud-detection-service</name>
+	<description>Fraud detection service for paystream</description>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-webflux</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.google.cloud</groupId>
+			<artifactId>spring-cloud-gcp-starter-pubsub</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.google.cloud</groupId>
+				<artifactId>spring-cloud-gcp-dependencies</artifactId>
+				<version>${spring-cloud-gcp-dependencies}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>${jib.version}</version>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

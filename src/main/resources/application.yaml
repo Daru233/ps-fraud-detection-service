@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    gcp:
+#      double check the project id and the subscription
+      project-id: prj-paystream-dv
+
+fraud:
+  cron: "0 0 6,18 * * *"
+  zone: "Europe/London"
+  subscription: fraud-sub
+  max-messages: 10
+
